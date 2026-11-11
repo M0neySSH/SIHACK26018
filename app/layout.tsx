@@ -7,7 +7,7 @@ import GovFooter from "../components/ui/GovFooter";
 import ClientProviders from "../components/ui/ClientProviders";
 
 export const metadata: Metadata = {
-  title: "भू-दृष्टि | BhumiDrishti — National Land Records Modernization Portal",
+  title: "भू-दृष्टि | Bhoo-Drishti — National Land Records Modernization Portal",
   description:
     "Digital India Land Records Modernization Programme (DILRMP) — AI-powered Land Record Digitization, Validation, and Interactive GIS Twin Portal.",
 };

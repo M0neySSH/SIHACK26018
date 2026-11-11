@@ -44,7 +44,7 @@ export default function Sidebar() {
         <span style={{ fontSize: "1.8rem" }}>🏛️</span>
         <div>
           <h1 className="text-gradient" style={{ fontSize: "1.3rem", marginBottom: 0 }}>
-            BhumiDrishti
+            Bhoo-Drishti
           </h1>
           <span
             style={{

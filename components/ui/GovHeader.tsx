@@ -1,12 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function GovHeader() {
   const [lang, setLang] = useState<"hi" | "en">("en");
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+
+    const updateHeight = () => {
+      document.documentElement.style.setProperty(
+        "--gov-header-height",
+        `${el.getBoundingClientRect().height}px`
+      );
+    };
+
+    updateHeight();
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <header className="gov-header-wrapper">
+    <header ref={headerRef} className="gov-header-wrapper">
       {/* 1. Indian Tricolor Bar */}
       <div className="gov-tricolor-bar">
         <div className="tricolor-saffron" />
@@ -53,7 +71,7 @@ export default function GovHeader() {
             <div className="gov-brand-titles">
               <div className="gov-bilingual-title">
                 <span className="gov-title-hindi">भू-दृष्टि</span>
-                <span className="gov-title-main">BhumiDrishti</span>
+                <span className="gov-title-main">Bhoo-Drishti</span>
               </div>
               <p className="gov-subtitle">
                 राष्ट्रीय भूमि अभिलेख डिजिटलीकरण एवं सत्यापन पोर्टल
