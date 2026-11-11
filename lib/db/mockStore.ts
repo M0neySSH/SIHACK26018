@@ -2,7 +2,7 @@
 // SIH 26018 — In-Memory Mock Database Store (Persistent Global Singleton)
 // ============================================================
 
-import type { CanonicalLandRecord, QualityReport } from "../../utils/schemas/landRecord";
+import type { AuditEntry, CanonicalLandRecord, QualityReport } from "../../utils/schemas/landRecord";
 
 export interface StoredDocument {
   id: string;
